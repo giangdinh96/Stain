@@ -1,0 +1,16 @@
+<template name="MVP Template New" description="Creates a new MVP classes" format="4" revision="1">
+
+    <category value="Other" />
+
+    <parameter name="Functionality Name" constraints="class|unique|nonempty" default="Home"
+        help="The name of the functionality that requires MVP module" id="className"
+        type="string" />
+
+    <parameter name="Layout Name" constraints="layout|unique|nonempty" default="fragment_home"
+        help="The name of the layout to create for the fragment" id="layoutName"
+        suggest="fragment_${classToResource(className)}" type="string" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

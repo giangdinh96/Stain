@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Toolbar">
+
+        <!--Header-->
+        <attr name="tbl_header_drawable" format="reference|color" />
+
+        <!--Top space-->
+        <attr name="tbl_header_top_space_height" format="reference|dimension" />
+        <attr name="tbl_header_top_space_visible" format="boolean" />
+        <attr name="tbl_header_top_space_drawable" format="reference|color" />
+
+        <!--Header content container-->
+        <attr name="tbl_header_content_container_drawable" format="reference|color" />
+        <attr name="tbl_header_content_container_height" format="reference|dimension" />
+
+        <!--Display style-->
+        <attr name="tbl_header_action_left_style" format="enum">
+            <enum name="none" value="0" />
+            <enum name="text" value="1" />
+            <enum name="image" value="2" />
+        </attr>
+        <attr name="tbl_header_action_right_style" format="enum">
+            <enum name="none" value="0" />
+            <enum name="text" value="1" />
+            <enum name="image" value="2" />
+        </attr>
+
+        <!--Title-->
+        <attr name="tbl_header_title" format="reference|string" />
+        <attr name="tbl_header_title_color" format="reference|color" />
+        <attr name="tbl_header_title_size" format="reference|dimension" />
+        <attr name="tbl_header_title_style" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="normal-italic" value="3" />
+            <enum name="medium-italic" value="4" />
+            <enum name="bold-italic" value="5" />
+        </attr>
+        <attr name="tbl_header_title_all_caps" format="boolean" />
+
+        <!--Left text-->
+        <attr name="tbl_header_left_text" format="reference|string" />
+        <attr name="tbl_header_left_text_color" format="reference|color" />
+        <attr name="tbl_header_left_text_size" format="reference|dimension" />
+        <attr name="tbl_header_left_text_style" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="normal-italic" value="3" />
+            <enum name="medium-italic" value="4" />
+            <enum name="bold-italic" value="5" />
+        </attr>
+        <attr name="tbl_header_left_text_all_caps" format="boolean" />
+
+        <!--Right text-->
+        <attr name="tbl_header_right_text" format="reference|string" />
+        <attr name="tbl_header_right_text_color" format="reference|color" />
+        <attr name="tbl_header_right_text_size" format="reference|dimension" />
+        <attr name="tbl_header_right_text_style" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="normal-italic" value="3" />
+            <enum name="medium-italic" value="4" />
+            <enum name="bold-italic" value="5" />
+        </attr>
+        <attr name="tbl_header_right_text_all_caps" format="boolean" />
+
+        <!--Left image-->
+        <attr name="tbl_header_left_image" format="reference|color" />
+        <attr name="tbl_header_left_image_tint" format="color" />
+        <attr name="tbl_header_left_image_size" format="reference|dimension" />
+        <attr name="tbl_header_left_image_background" format="reference|color" />
+
+        <!--Right image-->
+        <attr name="tbl_header_right_image" format="reference|color" />
+        <attr name="tbl_header_right_image_tint" format="color" />
+        <attr name="tbl_header_right_image_size" format="reference|dimension" />
+        <attr name="tbl_header_right_image_background" format="reference|color" />
+    </declare-styleable>
+</resources>

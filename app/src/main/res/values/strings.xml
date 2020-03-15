@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Stain</string>
+    <string name="exam_user_name">ReturnNotFound</string>
+    <string name="rank">Rank</string>
+    <string name="discover">Discover</string>
+    <string name="love">Love</string>
+    <string name="name">Name</string>
+    <string name="date">Date</string>
+    <string name="no_data">No data</string>
+    <string name="notification">Notification</string>
+</resources>

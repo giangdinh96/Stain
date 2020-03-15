@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.returnnotfound.stain.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_content_tb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion"
+    app:tbl_header_action_left_style="image"
+    app:tbl_header_action_right_style="image"
+    app:tbl_header_content_container_drawable="@android:color/transparent"
+    app:tbl_header_drawable="@color/colorPrimary"
+    app:tbl_header_title="@string/discover"
+    app:tbl_header_title_all_caps="false"
+    app:tbl_header_title_color="#135E13"
+    app:tbl_header_title_style="bold"
+    app:tbl_header_top_space_drawable="@android:color/transparent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_pager_vp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom_menu_bnv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_body_v" />
+
+    <com.returnnotfound.stain.widget.BottomNavigationView
+        android:id="@+id/main_bottom_menu_bnv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/common_height"
+        android:background="@color/colorPrimary"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/color_menu_item_selector"
+        app:itemRippleColor="@android:color/white"
+        app:itemTextAppearanceActive="@style/TextBottomNavigationMenuActive"
+        app:itemTextAppearanceInactive="@style/TextBottomNavigationMenuInActive"
+        app:itemTextColor="@color/color_menu_item_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/main_menu" />
+
+    <View
+        android:id="@+id/top_divider_v"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_shadow_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/toolbar_body_v"
+        app:layout_constraintRight_toRightOf="@+id/toolbar_body_v"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_body_v" />
+
+    <View
+        android:id="@+id/bottom_divider_v"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@drawable/bg_shadow_top"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom_menu_bnv"
+        app:layout_constraintLeft_toLeftOf="@+id/toolbar_body_v"
+        app:layout_constraintRight_toRightOf="@+id/toolbar_body_v" />
+
+    <ImageView
+        android:id="@+id/video_iv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/common_height"
+        android:background="#f00"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom_menu_bnv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/video_content_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#0f0"
+        app:layout_constraintBottom_toBottomOf="@id/video_iv"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintLeft_toLeftOf="@id/video_iv"
+        app:layout_constraintTop_toTopOf="@id/video_iv" />
+</com.returnnotfound.stain.widget.Toolbar>

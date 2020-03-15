@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "988744624324",
+    "firebase_url": "https://staint-cb7ef.firebaseio.com",
+    "project_id": "staint-cb7ef",
+    "storage_bucket": "staint-cb7ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988744624324:android:8d633abbee2f164b840191",
+        "android_client_info": {
+          "package_name": "com.returnnotfound.stain.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988744624324-v9aa7u6pt465plntlu8k8t526rpjgbhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaK3-Yha6Ho2UmVX81pVA33YV7rmN_66U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988744624324-v9aa7u6pt465plntlu8k8t526rpjgbhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

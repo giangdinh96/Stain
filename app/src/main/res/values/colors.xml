@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#1C861C</color>
+
+    <color name="colorTextDefault">@android:color/black</color>
+    <color name="colorBackgroundDefault">#FFFFFF</color>
+
+    <color name="colorBackgroundToolbar">@color/colorPrimary</color>
+    <color name="colorToolbarText">@color/colorItemMenuActive</color>
+
+    <color name="colorItemMenuActive">#135E13</color>
+    <color name="colorItemMenuInActive">#7D7D7D</color>
+</resources>
