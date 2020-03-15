@@ -1,4 +1,4 @@
-package com.returnnotfound.stain.ui.main;
+package com.returnnotfound.stain.presentation.main;
 
 import android.view.View;
 

@@ -1,10 +1,10 @@
-package com.returnnotfound.stain.ui.main;
+package com.returnnotfound.stain.presentation.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.returnnotfound.stain.ui.main.rank.RankFragment;
+import com.returnnotfound.stain.presentation.main.rank.RankFragment;
 
 public class MainPagerAdapter extends FragmentStateAdapter {
   private Fragment[] fragments = new Fragment[]{RankFragment.newInstance(), RankFragment.newInstance(), RankFragment.newInstance()};

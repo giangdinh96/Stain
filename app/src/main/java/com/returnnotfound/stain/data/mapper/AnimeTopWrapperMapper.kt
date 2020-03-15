@@ -10,8 +10,6 @@ interface AnimeTopWrapperMapper {
   fun toModel(dto: AnimeTopWrapperDTO?): AnimeTopWrapper?
 
   companion object {
-    val INSTANCE = Mappers.getMapper(
-      AnimeTopWrapperMapper::class.java
-    )
+    val INSTANCE: AnimeTopWrapperMapper = Mappers.getMapper(AnimeTopWrapperMapper::class.java)
   }
 }

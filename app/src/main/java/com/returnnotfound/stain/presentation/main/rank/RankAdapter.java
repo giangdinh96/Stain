@@ -1,4 +1,4 @@
-package com.returnnotfound.stain.ui.main.rank;
+package com.returnnotfound.stain.presentation.main.rank;
 
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;

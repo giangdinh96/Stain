@@ -1,13 +1,5 @@
 package com.returnnotfound.stain;
 
-public abstract class Test extends Parent {
-  String a;
+public abstract class Test {
   public abstract void show();
-}
-
-class Parent {
-  int a;
-  public void show(){
-
-  }
 }
