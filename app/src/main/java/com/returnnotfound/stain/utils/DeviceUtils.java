@@ -1,5 +1,6 @@
 package com.returnnotfound.stain.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -15,6 +16,7 @@ public abstract class DeviceUtils {
     return activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_UNDEFINED;
   }
 
+  @SuppressLint("SourceLockedOrientationActivity")
   public static void forceRotateScreen(Activity activity, int orientation) {
     switch (orientation) {
       case Configuration.ORIENTATION_LANDSCAPE:

@@ -13,7 +13,6 @@ import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -26,14 +25,12 @@ object NetworkConfigModule {
   @Singleton
   fun provideRetrofit(
     okHttpClient: OkHttpClient,
-    gsonConverterFactory: GsonConverterFactory,
-    rxJava2CallAdapterFactory: RxJava2CallAdapterFactory
+    gsonConverterFactory: GsonConverterFactory
   ): Retrofit {
     return Retrofit.Builder()
       .baseUrl(BuildConfig.BASE_URL)
       .client(okHttpClient)
       .addConverterFactory(gsonConverterFactory)
-      .addCallAdapterFactory(rxJava2CallAdapterFactory)
       .build()
   }
 
@@ -50,12 +47,6 @@ object NetworkConfigModule {
       .setLenient()
       .setPrettyPrinting()
       .create()
-  }
-
-  @JvmStatic
-  @Provides
-  fun provideRxJava2CallAdapterFactory(): RxJava2CallAdapterFactory {
-    return RxJava2CallAdapterFactory.create()
   }
 
   @JvmStatic
