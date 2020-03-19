@@ -19,7 +19,7 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
 abstract class BaseActivity : BaseLogActivity(), IBaseActivityView {
   private var mCurrentBackStackEntryCount = 0
-  private var mIsFistResume = true
+  private var mIsFirstResume = true
   private var mUnBinder: Unbinder? = null
 
   override fun getLayoutId() = ROOT_LAYOUT_ID
@@ -65,24 +65,22 @@ abstract class BaseActivity : BaseLogActivity(), IBaseActivityView {
     setContentView(getLayoutId())
     mUnBinder = ButterKnife.bind(this)
     if (isTouchHideKeyboard()) {
-      ViewUtils.setupUI(
-        findViewById(R.id.content),
-        this,
-        getExcludeViewsTouchHideKeyboard()
-      )
+      ViewUtils.setupUI(findViewById(R.id.content), this, getExcludeViewsTouchHideKeyboard())
     }
     registerOnBackStackChange()
     if (savedInstanceState == null) {
       addRootFragment(getRootFragment())
     }
+
+    mIsFirstResume = savedInstanceState == null
     initLayout()
   }
 
   override fun onResume() {
     super.onResume()
-    if (mIsFistResume) {
+    if (mIsFirstResume) {
       onFirstResume()
-      mIsFistResume = false
+      mIsFirstResume = false
     } else {
       onBackResume()
     }

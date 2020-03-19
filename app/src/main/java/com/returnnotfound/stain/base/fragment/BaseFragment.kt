@@ -59,12 +59,11 @@ abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
     mUnBinder = ButterKnife.bind(this, view)
     view.isClickable = true
     if (isTouchHideKeyboard()) {
-      ViewUtils.setupUI(
-        view,
-        activity,
-        getExcludeViewsTouchHideKeyboard()
-      )
+      ViewUtils.setupUI(view, activity, getExcludeViewsTouchHideKeyboard())
     }
+
+    mIsFirstResume = savedInstanceState == null
+
     initLayout()
     return view
   }
