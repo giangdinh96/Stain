@@ -21,7 +21,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.core.widget.ImageViewCompat;
 
 import com.returnnotfound.stain.R;
-import com.returnnotfound.stain.utils.TypefaceUtils;
+import com.returnnotfound.stain.utils.FontUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -598,7 +598,7 @@ public class Toolbar extends MotionLayout implements View.OnClickListener {
 
   private void loadFont(TextView textView, String font) {
     String root = "fonts/";
-    Typeface typeface = TypefaceUtils.load(getContext().getAssets(), root.concat(font));
+    Typeface typeface = FontUtils.get(getContext(), root.concat(font));
     textView.setTypeface(typeface);
   }
 
