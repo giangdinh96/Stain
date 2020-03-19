@@ -72,6 +72,7 @@ abstract class BaseActivity : BaseLogActivity(), IBaseActivityView {
       addRootFragment(getRootFragment())
     }
 
+    mCurrentBackStackEntryCount = supportFragmentManager.backStackEntryCount
     mIsFirstResume = savedInstanceState == null
     initLayout()
   }
