@@ -5,7 +5,8 @@ import com.returnnotfound.stain.base.fragment.BaseFragment
 import com.returnnotfound.stain.presentation.main.MainFragment
 
 class MainActivity : BaseActivity() {
-  override fun createRootFragment(): BaseFragment {
+
+  override fun getRootFragment(): BaseFragment {
     return MainFragment.newInstance()
   }
 }
