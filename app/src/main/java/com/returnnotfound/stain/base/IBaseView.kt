@@ -12,6 +12,5 @@ interface IBaseView : IFragmentTransaction {
   fun onBackPressed()
   fun showProgress()
   fun hideProgress()
-  fun showToast(resMessage: Int)
   fun showToast(message: String?)
 }

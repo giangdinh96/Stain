@@ -20,6 +20,12 @@ fun Activity.hideKeyboard() {
   ViewUtils.hideKeyboard(this)
 }
 
+fun BaseActivity.showToast(resId: Int) {
+  showToast(getString(resId))
+}
+
+
+//----------------------------------//
 
 fun Fragment.getBaseActivity(): BaseActivity? = activity?.getBaseActivity()
 
@@ -31,4 +37,8 @@ fun Fragment.showKeyboard(editText: EditText?) {
 
 fun Fragment.hideKeyboard() {
   activity?.let { ViewUtils.hideKeyboard(it) }
+}
+
+fun BaseFragment.showToast(resId: Int) {
+  showToast(getString(resId))
 }

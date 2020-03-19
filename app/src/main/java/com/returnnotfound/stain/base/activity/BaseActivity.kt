@@ -1,16 +1,15 @@
 package com.returnnotfound.stain.base.activity
 
-import android.R
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import butterknife.ButterKnife
 import butterknife.Unbinder
 import com.returnnotfound.stain.FRAGMENT_CONTAINER_ID
+import com.returnnotfound.stain.R
 import com.returnnotfound.stain.ROOT_LAYOUT_ID
 import com.returnnotfound.stain.base.fragment.BaseFragment
 import com.returnnotfound.stain.utils.ViewUtils
@@ -52,10 +51,8 @@ abstract class BaseActivity : BaseLogActivity(), IBaseActivityView {
   }
 
   override fun showProgress() {}
+
   override fun hideProgress() {}
-  override fun showToast(@StringRes resMessage: Int) {
-    showToast(getString(resMessage))
-  }
 
   override fun showToast(message: String?) {}
 
@@ -134,11 +131,9 @@ abstract class BaseActivity : BaseLogActivity(), IBaseActivityView {
   // More method
   private fun registerOnBackStackChange() {
     supportFragmentManager.addOnBackStackChangedListener {
-      val newCurrentBackStackEntryCount =
-        supportFragmentManager.backStackEntryCount
+      val newCurrentBackStackEntryCount = supportFragmentManager.backStackEntryCount
       if (newCurrentBackStackEntryCount < mCurrentBackStackEntryCount) {
-        val topFragment =
-          FragmentUtils.getTopFragment(supportFragmentManager)
+        val topFragment = FragmentUtils.getTopFragment(supportFragmentManager)
         if (topFragment is BaseFragment) {
           topFragment.onBackResume()
         }

@@ -45,10 +45,6 @@ abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
     getBaseActivity()?.hideProgress()
   }
 
-  override fun showToast(resMessage: Int) {
-    getBaseActivity()?.showToast(resMessage)
-  }
-
   override fun showToast(message: String?) {
     getBaseActivity()?.showToast(message)
   }
