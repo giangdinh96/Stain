@@ -5,7 +5,6 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -59,13 +58,6 @@ abstract class BaseActivity : BaseLogActivity(), IBaseActivityView {
   }
 
   override fun showToast(message: String?) {}
-  override fun showKeyboard(view: EditText?) {
-    ViewUtils.showKeyboard(view!!)
-  }
-
-  override fun hideKeyboard() {
-    ViewUtils.hideKeyboard(this)
-  }
 
   override fun attachBaseContext(newBase: Context) {
     super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))

@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import butterknife.ButterKnife
@@ -52,14 +51,6 @@ abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
 
   override fun showToast(message: String?) {
     getBaseActivity()?.showToast(message)
-  }
-
-  override fun showKeyboard(view: EditText?) {
-    getBaseActivity()?.showKeyboard(view)
-  }
-
-  override fun hideKeyboard() {
-    getBaseActivity()?.hideKeyboard()
   }
 
   override fun onCreateView(
