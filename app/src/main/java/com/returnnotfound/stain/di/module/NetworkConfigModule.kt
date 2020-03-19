@@ -6,7 +6,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.returnnotfound.stain.BuildConfig
 import com.returnnotfound.stain.LOG_TAG_NETWORK
-import com.returnnotfound.stain.data.remote.AuthenticationInterceptor
 import com.returnnotfound.stain.di.AppContext
 import dagger.Module
 import dagger.Provides
@@ -63,7 +62,6 @@ object NetworkConfigModule {
   @Provides
   @Singleton
   fun provideOkHttpClient(
-    authenticationInterceptor: AuthenticationInterceptor,
     httpLoggingInterceptor: HttpLoggingInterceptor,
     cache: Cache
   ): OkHttpClient {
@@ -72,7 +70,6 @@ object NetworkConfigModule {
       .readTimeout(15, TimeUnit.SECONDS)
       .writeTimeout(15, TimeUnit.SECONDS)
 //      .cache(cache)
-      .addInterceptor(authenticationInterceptor)
       .addInterceptor(httpLoggingInterceptor)
       .build()
   }
