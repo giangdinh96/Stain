@@ -1,4 +1,4 @@
-package com.returnnotfound.base.template.mvp
+package com.returnnotfound.stain.template.mvp
 
 //interface IPresenter<V> {
 //    fun getView(): V
