@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.returnnotfound.stain.presentation.main.discover.DiscoverFragment;
+import com.returnnotfound.stain.presentation.main.love.LoveFragment;
 import com.returnnotfound.stain.presentation.main.rank.RankFragment;
 
 public class MainPagerAdapter extends FragmentStateAdapter {
-  private Fragment[] fragments = new Fragment[]{RankFragment.newInstance(), RankFragment.newInstance(), RankFragment.newInstance()};
+  private Fragment[] fragments = new Fragment[]{DiscoverFragment.newInstance(), RankFragment.newInstance(), LoveFragment.newInstance()};
 
   public MainPagerAdapter(@NonNull Fragment fragment) {
     super(fragment);
