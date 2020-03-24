@@ -60,7 +60,7 @@ object ImageUtils {
     return pathImage
   }
 
-  fun saveBitmap(bitmap: Bitmap?, file: String?): Boolean {
+  fun saveBitmap(bitmap: Bitmap?, file: String): Boolean {
     var bitmapResult = bitmap
     val bytes = ByteArrayOutputStream()
     bitmapResult?.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
