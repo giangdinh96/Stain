@@ -34,7 +34,7 @@ abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
   }
 
   override fun onBackPressed() {
-    parentFragmentManager.popBackStack()
+    fragmentManager?.popBackStack()
   }
 
   override fun showProgress() {
