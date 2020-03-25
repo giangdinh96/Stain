@@ -1,12 +1,12 @@
-package com.returnnotfound.stain.presentation.main;
+package com.returnnotfound.stain.presentation.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.returnnotfound.stain.presentation.main.discover.DiscoverFragment;
-import com.returnnotfound.stain.presentation.main.love.LoveFragment;
-import com.returnnotfound.stain.presentation.main.rank.RankFragment;
+import com.returnnotfound.stain.presentation.ui.main.discover.DiscoverFragment;
+import com.returnnotfound.stain.presentation.ui.main.love.LoveFragment;
+import com.returnnotfound.stain.presentation.ui.main.rank.RankFragment;
 
 public class MainPagerAdapter extends FragmentStateAdapter {
   private Fragment[] fragments = new Fragment[]{DiscoverFragment.newInstance(), RankFragment.newInstance(), LoveFragment.newInstance()};

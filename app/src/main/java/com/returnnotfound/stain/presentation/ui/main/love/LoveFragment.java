@@ -1,4 +1,4 @@
-package com.returnnotfound.stain.presentation.main.love;
+package com.returnnotfound.stain.presentation.ui.main.love;
 
 import android.os.Bundle;
 

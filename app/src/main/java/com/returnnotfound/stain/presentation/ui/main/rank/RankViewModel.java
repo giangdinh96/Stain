@@ -1,4 +1,4 @@
-package com.returnnotfound.stain.presentation.main.rank;
+package com.returnnotfound.stain.presentation.ui.main.rank;
 
 import com.returnnotfound.stain.base.BaseViewModel;
 
