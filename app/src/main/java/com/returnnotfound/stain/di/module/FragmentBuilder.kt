@@ -1,9 +1,9 @@
 package com.returnnotfound.stain.di.module
 
-import com.returnnotfound.stain.presentation.main.MainFragment
-import com.returnnotfound.stain.presentation.main.discover.DiscoverFragment
-import com.returnnotfound.stain.presentation.main.love.LoveFragment
-import com.returnnotfound.stain.presentation.main.rank.RankFragment
+import com.returnnotfound.stain.presentation.ui.main.MainFragment
+import com.returnnotfound.stain.presentation.ui.main.discover.DiscoverFragment
+import com.returnnotfound.stain.presentation.ui.main.love.LoveFragment
+import com.returnnotfound.stain.presentation.ui.main.rank.RankFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
