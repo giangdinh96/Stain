@@ -1,7 +1,7 @@
 package com.returnnotfound.stain.di.module
 
 import com.returnnotfound.stain.di.ActivityScope
-import com.returnnotfound.stain.presentation.MainActivity
+import com.returnnotfound.stain.presentation.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

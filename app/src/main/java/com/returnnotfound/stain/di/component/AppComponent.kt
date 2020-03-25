@@ -16,7 +16,7 @@ import javax.inject.Singleton
     NetworkConfigModule::class,
     ActivityBuilder::class,
     ViewModelModule::class,
-    ApiServiceModule::class,
+    DataSourceModule::class,
     RepositoryModule::class
   ]
 )
