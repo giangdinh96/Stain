@@ -1,7 +1,6 @@
 package com.returnnotfound.stain.base.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,11 +22,11 @@ abstract class BaseFragment : BaseLogFragment(), BaseFragmentView {
   }
 
   override fun onFirstResume() {
-    Log.e("Resume", "onFirstResume: " + this.javaClass.name)
+    log("onFirstResume")
   }
 
   override fun onBackResume() {
-    Log.e("Resume", "onBackResume: " + this.javaClass.name)
+    log("onBackResume")
   }
 
   override fun onBackPressed() {

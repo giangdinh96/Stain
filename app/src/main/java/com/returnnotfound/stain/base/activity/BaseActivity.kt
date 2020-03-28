@@ -2,19 +2,18 @@ package com.returnnotfound.stain.base.activity
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import butterknife.ButterKnife
 import butterknife.Unbinder
 import com.returnnotfound.stain.base.FRAGMENT_CONTAINER_ID
 import com.returnnotfound.stain.base.ROOT_LAYOUT_ID
 import com.returnnotfound.stain.base.addRootFragment
-import com.returnnotfound.stain.base.fragment.BaseFragment
 import com.returnnotfound.stain.base.extension.getTopFragment
+import com.returnnotfound.stain.base.fragment.BaseFragment
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
 abstract class BaseActivity : BaseLogActivity(), BaseActivityView {
   private var currentBackStackEntryCount = 0
-  private var mIsFirstResume = true
+  private var isFirstResume = true
   private var mUnBinder: Unbinder? = null
 
   override fun getLayoutId() = ROOT_LAYOUT_ID
@@ -24,11 +23,11 @@ abstract class BaseActivity : BaseLogActivity(), BaseActivityView {
   override fun initLayout() {}
 
   override fun onFirstResume() {
-    Log.d("Resume", "onFirstResume: " + this.javaClass.name)
+    log("onFirstResume")
   }
 
   override fun onBackResume() {
-    Log.d("Resume", "onBackResume: " + this.javaClass.name)
+    log("onBackResume")
   }
 
   override fun onBackPressed() {
@@ -54,7 +53,7 @@ abstract class BaseActivity : BaseLogActivity(), BaseActivityView {
     super.onCreate(savedInstanceState)
     setContentView(getLayoutId())
     currentBackStackEntryCount = supportFragmentManager.backStackEntryCount
-    mIsFirstResume = savedInstanceState == null
+    isFirstResume = savedInstanceState == null
 
     registerOnBackStackChange()
 
@@ -67,9 +66,9 @@ abstract class BaseActivity : BaseLogActivity(), BaseActivityView {
 
   override fun onResume() {
     super.onResume()
-    if (mIsFirstResume) {
+    if (isFirstResume) {
       onFirstResume()
-      mIsFirstResume = false
+      isFirstResume = false
     } else {
       onBackResume()
     }

@@ -10,7 +10,7 @@ import com.returnnotfound.stain.LOG_TAG_LIFECYCLE
 import dagger.android.support.DaggerFragment
 
 abstract class BaseLogFragment : DaggerFragment() {
-  private fun log(log: String) {
+  protected fun log(log: String) {
     Log.e(LOG_TAG_LIFECYCLE, "$this-$log")
   }
 

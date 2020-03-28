@@ -6,7 +6,7 @@ import com.returnnotfound.stain.LOG_TAG_LIFECYCLE
 import dagger.android.support.DaggerAppCompatActivity
 
 abstract class BaseLogActivity : DaggerAppCompatActivity() {
-  private fun log(log: String) {
+  protected fun log(log: String) {
     Log.d(LOG_TAG_LIFECYCLE, "$this-$log")
   }
 
