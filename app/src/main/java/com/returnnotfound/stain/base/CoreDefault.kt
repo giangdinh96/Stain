@@ -1,6 +1,7 @@
-package com.returnnotfound.stain
+package com.returnnotfound.stain.base
 
 import android.content.Intent
+import com.returnnotfound.stain.R
 
 // Id
 const val ROOT_LAYOUT_ID = R.layout.activity_base
@@ -54,13 +55,7 @@ val COLOR_REFRESH_PROGRESS = intArrayOf(
 )
 
 enum class Anim(var enter: Int, var exit: Int) {
-  SLIDE_RIGHT_TO_LEFT(
-    ANIM_ENTER_RIGHT_TO_LEFT,
-    ANIM_EXIT_RIGHT_TO_LEFT
-  ),
-  SLIDE_LEFT_TO_RIGHT(
-    ANIM_ENTER_LEFT_TO_RIGHT,
-    ANIM_EXIT_LEFT_TO_RIGHT
-  ),
+  SLIDE_RIGHT_TO_LEFT(ANIM_ENTER_RIGHT_TO_LEFT, ANIM_EXIT_RIGHT_TO_LEFT),
+  SLIDE_LEFT_TO_RIGHT(ANIM_ENTER_LEFT_TO_RIGHT, ANIM_EXIT_LEFT_TO_RIGHT),
   SLIDE_NONE(ANIM_NONE, ANIM_NONE);
 }
