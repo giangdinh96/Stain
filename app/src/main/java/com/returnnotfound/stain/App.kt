@@ -6,6 +6,7 @@ import com.returnnotfound.stain.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import io.github.inflationx.viewpump.ViewPump
+import io.realm.Realm
 import javax.inject.Inject
 
 class App : DaggerApplication() {
@@ -22,9 +23,11 @@ class App : DaggerApplication() {
     instance = this
     // Init font
     ViewPump.init(viewPump)
+    // Init Realm
+    Realm.init(this)
   }
 
-  override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+  override fun applicationInjector(): AndroidInjector<App> {
     return DaggerAppComponent.factory().create(this)
   }
 
