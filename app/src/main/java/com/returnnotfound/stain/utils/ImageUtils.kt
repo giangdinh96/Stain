@@ -1,48 +1,21 @@
-package com.returnnotfound.stain.widget.image
+package com.returnnotfound.stain.utils
 
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
-import android.net.Uri
-import android.widget.ImageView
-import com.bumptech.glide.RequestBuilder
-import com.returnnotfound.stain.widget.image.ImageLoader.Companion.CACHE_PATH
-import com.returnnotfound.stain.widget.image.ImageLoaderFactory.instance
+import com.returnnotfound.stain.App
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
+const val FILE_EXTENSION = ".JPG"
+val CACHE_PATH: String = App.instance!!.cacheDir.absolutePath
+
 object ImageUtils {
-  fun getRequestBuilderDefault(imageView: ImageView?): RequestBuilder<Drawable?>? {
-    return instance.getRequestBuilderDefault(imageView)
-  }
-
-  fun loadImage(
-    imageView: ImageView? = null,
-    url: String? = null,
-    resId: Int = ImageLoader.DEFAULT_PLACE_HOLDER,
-    uri: Uri? = null,
-    thumbnail: String? = null,
-    placeHolderId: Int = ImageLoader.DEFAULT_PLACE_HOLDER,
-    errorId: Int = ImageLoader.DEFAULT_PLACE_HOLDER
-  ) {
-    instance.loadImage(imageView, url, resId, uri, thumbnail, placeHolderId, errorId)
-  }
-
-  // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-  fun pauseLoad(context: Context?) {
-    instance.pauseLoad(context)
-  }
-
-  fun resumeLoad(context: Context?) {
-    instance.resumeLoad(context)
-  }
-
   fun getBitmapFromLocal(path: String?): Bitmap {
     val options = BitmapFactory.Options()
     options.inJustDecodeBounds = false
@@ -54,7 +27,7 @@ object ImageUtils {
   }
 
   fun saveBitmap(data: Bitmap?): String {
-    val imageName = "${System.currentTimeMillis()}${ImageLoader.FILE_EXTENSION}"
+    val imageName = "${System.currentTimeMillis()}$FILE_EXTENSION"
     val pathImage = CACHE_PATH.toString() + imageName
     saveBitmap(data, pathImage)
     return pathImage
