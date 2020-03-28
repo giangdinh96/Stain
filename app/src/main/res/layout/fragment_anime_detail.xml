@@ -32,7 +32,7 @@
                 app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin">
 
-                <com.returnnotfound.stain.widget.Toolbar
+                <com.returnnotfound.stain.base.widget.Toolbar
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:tbl_header_action_left_style="image"
@@ -56,7 +56,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.returnnotfound.stain.widget.ProgressBar
+            <com.returnnotfound.stain.base.widget.ProgressBar
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_gravity="center"

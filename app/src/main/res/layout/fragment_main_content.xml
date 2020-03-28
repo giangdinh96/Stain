@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.returnnotfound.stain.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<com.returnnotfound.stain.base.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_content_tb"
     android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar_body_v" />
 
-    <com.returnnotfound.stain.widget.BottomNavigationView
+    <com.returnnotfound.stain.base.widget.BottomNavigationView
         android:id="@+id/main_bottom_menu_bnv"
         android:layout_width="0dp"
         android:layout_height="@dimen/common_height"
@@ -76,4 +76,4 @@
         app:layout_constraintDimensionRatio="16:9"
         app:layout_constraintLeft_toLeftOf="@id/video_iv"
         app:layout_constraintTop_toTopOf="@id/video_iv" />
-</com.returnnotfound.stain.widget.Toolbar>
+</com.returnnotfound.stain.base.widget.Toolbar>

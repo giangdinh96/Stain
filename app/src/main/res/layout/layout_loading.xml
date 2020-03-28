@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.returnnotfound.stain.widget.ProgressBar
+    <com.returnnotfound.stain.base.widget.ProgressBar
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center"

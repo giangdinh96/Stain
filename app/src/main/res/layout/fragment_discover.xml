@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:text="@string/discover" />
 
-    <com.returnnotfound.stain.widget.ProgressBar
+    <com.returnnotfound.stain.base.widget.ProgressBar
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center"

@@ -1,6 +1,6 @@
 package com.returnnotfound.stain.di.module
 
-import com.returnnotfound.stain.FONT_DEFAULT_PATH
+import com.returnnotfound.stain.base.FONT_DEFAULT_PATH
 import com.returnnotfound.stain.R
 import com.returnnotfound.stain.di.FontPathDefault
 import dagger.Module

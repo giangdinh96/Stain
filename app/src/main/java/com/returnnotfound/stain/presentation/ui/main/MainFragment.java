@@ -12,10 +12,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.returnnotfound.stain.R;
 import com.returnnotfound.stain.base.fragment.BaseFragment;
-import com.returnnotfound.stain.utils.ViewUtils;
-import com.returnnotfound.stain.widget.BottomNavigationView;
-import com.returnnotfound.stain.widget.CompositeOnNavigationItemSelectedListener;
-import com.returnnotfound.stain.widget.Toolbar;
+import com.returnnotfound.stain.base.utils.ViewUtils;
+import com.returnnotfound.stain.base.widget.BottomNavigationView;
+import com.returnnotfound.stain.base.widget.CompositeOnNavigationItemSelectedListener;
+import com.returnnotfound.stain.base.widget.Toolbar;
 
 import java.util.Objects;
 

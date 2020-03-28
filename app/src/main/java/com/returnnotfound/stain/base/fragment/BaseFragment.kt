@@ -5,15 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import butterknife.ButterKnife
 import butterknife.Unbinder
 import com.returnnotfound.stain.base.getBaseActivity
-import com.returnnotfound.stain.utils.ViewUtils
-import com.returnnotfound.stain.utils.fragment.FragmentOptions
+import com.returnnotfound.stain.base.utils.ViewUtils
 
-abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
+abstract class BaseFragment : BaseLogFragment(), BaseFragmentView {
   private var mIsFirstResume = true
   private var mUnBinder: Unbinder? = null
 
@@ -34,7 +31,7 @@ abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
   }
 
   override fun onBackPressed() {
-    fragmentManager?.popBackStack()
+    parentFragmentManager.popBackStack()
   }
 
   override fun showProgress() {
@@ -76,40 +73,5 @@ abstract class BaseFragment : BaseLogFragment(), IBaseFragmentView {
     } else {
       onBackResume()
     }
-  }
-
-  override fun onDestroy() {
-    if (mUnBinder != null) {
-      mUnBinder!!.unbind()
-    }
-    super.onDestroy()
-  }
-
-  override fun addRootFragment(fragment: Fragment) {
-    getBaseActivity()?.addRootFragment(fragment)
-  }
-
-  override fun addFragment(fragment: Fragment) {
-    getBaseActivity()?.addFragment(fragment)
-  }
-
-  override fun replaceFragment(fragment: Fragment) {
-    getBaseActivity()?.replaceFragment(fragment)
-  }
-
-  override fun attachFragment(
-    fragment: Fragment,
-    fragmentOptions: FragmentOptions
-  ) {
-    getBaseActivity()?.attachFragment(fragment, fragmentOptions)
-  }
-
-  override fun attachFragment(
-    containerId: Int,
-    fragment: Fragment,
-    fragmentManager: FragmentManager,
-    fragmentOptions: FragmentOptions
-  ) {
-    getBaseActivity()?.attachFragment(containerId, fragment, fragmentManager, fragmentOptions)
   }
 }

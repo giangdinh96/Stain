@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:circle="@{true}"
+            android:url="@{`https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/70428197_2358491811036135_1187432876795232256_o.jpg?_nc_cat=102&amp;_nc_sid=09cbfe&amp;_nc_ohc=gcXVmPKproMAX81caWz&amp;_nc_ht=scontent-hkt1-1.xx&amp;oh=a0858b8a7f5c4060d138501f12e105f6&amp;oe=5EA4F2D8https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/70428197_2358491811036135_1187432876795232256_o.jpg?_nc_cat=102&amp;_nc_sid=09cbfe&amp;_nc_ohc=gcXVmPKproMAX81caWz&amp;_nc_ht=scontent-hkt1-1.xx&amp;oh=a0858b8a7f5c4060d138501f12e105f6&amp;oe=5EA4F2D8`}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
