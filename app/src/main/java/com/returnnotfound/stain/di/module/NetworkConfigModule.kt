@@ -18,72 +18,73 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-object NetworkConfigModule {
+class NetworkConfigModule {
+  companion object {
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideRetrofit(
+      okHttpClient: OkHttpClient,
+      gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
+      return Retrofit.Builder()
+        .baseUrl(BuildConfig.BASE_URL)
+        .client(okHttpClient)
+        .addConverterFactory(gsonConverterFactory)
+        .build()
+    }
 
-  @JvmStatic
-  @Provides
-  @Singleton
-  fun provideRetrofit(
-    okHttpClient: OkHttpClient,
-    gsonConverterFactory: GsonConverterFactory
-  ): Retrofit {
-    return Retrofit.Builder()
-      .baseUrl(BuildConfig.BASE_URL)
-      .client(okHttpClient)
-      .addConverterFactory(gsonConverterFactory)
-      .build()
-  }
+    @JvmStatic
+    @Provides
+    fun provideGsonConverterFactory(gson: Gson): GsonConverterFactory {
+      return GsonConverterFactory.create(gson)
+    }
 
-  @JvmStatic
-  @Provides
-  fun provideGsonConverterFactory(gson: Gson): GsonConverterFactory {
-    return GsonConverterFactory.create(gson)
-  }
+    @JvmStatic
+    @Provides
+    fun provideGson(): Gson {
+      return GsonBuilder()
+        .setLenient()
+        .setPrettyPrinting()
+        .create()
+    }
 
-  @JvmStatic
-  @Provides
-  fun provideGson(): Gson {
-    return GsonBuilder()
-      .setLenient()
-      .setPrettyPrinting()
-      .create()
-  }
-
-  @JvmStatic
-  @Provides
-  @Singleton
-  fun provideOkHttpClient(
-    httpLoggingInterceptor: HttpLoggingInterceptor,
-    cache: Cache
-  ): OkHttpClient {
-    return OkHttpClient.Builder()
-      .connectTimeout(10, TimeUnit.SECONDS)
-      .readTimeout(15, TimeUnit.SECONDS)
-      .writeTimeout(15, TimeUnit.SECONDS)
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(
+      httpLoggingInterceptor: HttpLoggingInterceptor,
+      cache: Cache
+    ): OkHttpClient {
+      return OkHttpClient.Builder()
+        .connectTimeout(10, TimeUnit.SECONDS)
+        .readTimeout(15, TimeUnit.SECONDS)
+        .writeTimeout(15, TimeUnit.SECONDS)
 //      .cache(cache)
-      .addInterceptor(httpLoggingInterceptor)
-      .build()
-  }
+        .addInterceptor(httpLoggingInterceptor)
+        .build()
+    }
 
-  @JvmStatic
-  @Provides
-  @Singleton
-  fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-    val result = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
-      override fun log(message: String) {
-        Log.e(LOG_TAG_NETWORK, message)
-      }
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+      val result = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
+        override fun log(message: String) {
+          Log.e(LOG_TAG_NETWORK, message)
+        }
 
-    })
-    result.setLevel(HttpLoggingInterceptor.Level.BODY)
-    return result
-  }
+      })
+      result.setLevel(HttpLoggingInterceptor.Level.BODY)
+      return result
+    }
 
-  @JvmStatic
-  @Provides
-  @Singleton
-  fun provideCache(@AppContext context: Context): Cache {
-    val sizeMb = 20
-    return Cache(context.cacheDir, (sizeMb * 1024 * 1024).toLong())
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideCache(@AppContext context: Context): Cache {
+      val sizeMb = 20
+      return Cache(context.cacheDir, (sizeMb * 1024 * 1024).toLong())
+    }
   }
 }
