@@ -1,4 +1,4 @@
-package com.returnnotfound.stain.utils
+package com.returnnotfound.stain.extension
 
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
