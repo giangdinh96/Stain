@@ -42,6 +42,6 @@ interface ImageLoader {
   companion object {
     const val FILE_EXTENSION = ".JPG"
     const val DEFAULT_PLACE_HOLDER = R.drawable.image_placeholder
-    val CACHE_PATH = App.instance!!.cacheDir.absolutePath
+    val CACHE_PATH: String = App.instance!!.cacheDir.absolutePath
   }
 }
