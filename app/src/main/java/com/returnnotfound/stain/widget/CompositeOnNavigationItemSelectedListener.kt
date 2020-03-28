@@ -24,10 +24,10 @@ class CompositeOnNavigationItemSelectedListener(capacity: Int) :
     if (mCallbacks.isEmpty()) {
       return true
     }
-    val size = mCallbacks.size
-    for (i in 0 until size - 1) {
+    val lastIndex = mCallbacks.lastIndex
+    for (i in 0 until lastIndex) {
       mCallbacks[i].onNavigationItemSelected(item)
     }
-    return mCallbacks[size - 1].onNavigationItemSelected(item)
+    return mCallbacks.last().onNavigationItemSelected(item)
   }
 }
