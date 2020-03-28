@@ -8,7 +8,7 @@ object FontUtils {
   private val CACHE = Hashtable<String, Typeface>()
 
   @JvmStatic
-  operator fun get(c: Context, path: String): Typeface? {
+  fun get(c: Context, path: String): Typeface? {
     synchronized(CACHE) {
       if (!CACHE.containsKey(path)) {
         try {

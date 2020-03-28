@@ -12,10 +12,9 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
-const val FILE_EXTENSION = ".JPG"
-val CACHE_PATH: String = App.instance!!.cacheDir.absolutePath
-
 object ImageUtils {
+  private const val FILE_EXTENSION = ".JPG"
+  private val CACHE_PATH: String = App.instance!!.cacheDir.absolutePath
   fun getBitmapFromLocal(path: String?): Bitmap {
     val options = BitmapFactory.Options()
     options.inJustDecodeBounds = false
