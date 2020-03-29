@@ -12,12 +12,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.returnnotfound.stain.R;
 import com.returnnotfound.stain.base.fragment.BaseFragment;
-import com.returnnotfound.stain.base.utils.ViewUtils;
 import com.returnnotfound.stain.base.widget.BottomNavigationView;
 import com.returnnotfound.stain.base.widget.CompositeOnNavigationItemSelectedListener;
 import com.returnnotfound.stain.base.widget.Toolbar;
-
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -65,14 +62,12 @@ public class MainFragment extends BaseFragment implements MainView {
   @OnClick(R.id.toolbar_header_action_left_iv)
   @Override
   public void onMenuClick(View view) {
-    ViewUtils.delayViewPress(view);
     mDrawerRootDl.openDrawer(GravityCompat.START, true);
   }
 
   @OnClick(R.id.toolbar_header_action_right_iv)
   @Override
   public void onNotificationClick(View view) {
-    ViewUtils.delayViewPress(view);
     mDrawerRootDl.openDrawer(GravityCompat.END, true);
   }
 
@@ -155,7 +150,7 @@ public class MainFragment extends BaseFragment implements MainView {
         mDrawerRootDl.closeDrawer(GravityCompat.END);
       }
     } else {
-      Objects.requireNonNull(getActivity()).finish();
+      requireActivity().finish();
     }
   }
 }

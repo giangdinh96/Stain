@@ -2,7 +2,7 @@ package com.returnnotfound.stain.presentation.ui.main.rank;
 
 import android.os.Bundle;
 
-import com.returnnotfound.stain.AppViewModelFactory;
+import com.returnnotfound.stain.presentation.AppViewModelFactory;
 import com.returnnotfound.stain.R;
 import com.returnnotfound.stain.base.fragment.BaseFragment;
 
