@@ -1,4 +1,4 @@
-package com.returnnotfound.stain
+package com.returnnotfound.stain.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
