@@ -11,7 +11,7 @@ import io.github.inflationx.viewpump.ViewPump
 import javax.inject.Singleton
 
 @Module
-object FontModule {
+object FontConfigModule {
   @JvmStatic
   @FontPathDefault
   @Singleton

@@ -12,7 +12,7 @@ import javax.inject.Singleton
   modules = [
     AndroidSupportInjectionModule::class,
     AppModule::class,
-    FontModule::class,
+    FontConfigModule::class,
     NetworkConfigModule::class,
     RealmConfigModule::class,
     ActivityBuilder::class,
