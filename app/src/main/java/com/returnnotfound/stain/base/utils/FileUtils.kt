@@ -13,6 +13,7 @@ import android.text.TextUtils
 import android.webkit.MimeTypeMap
 import com.returnnotfound.stain.base.MIME_TYPE_IMAGE_JPEG
 import java.io.File
+import java.util.*
 
 object FileUtils {
   @SuppressLint("NewApi")
@@ -157,22 +158,22 @@ object FileUtils {
   fun getMimeType(file: File): String? {
     var path = file.path
     path = path.replace(" ", "")
-    val extension = MimeTypeMap.getFileExtensionFromUrl(path).toLowerCase()
+    val extension = MimeTypeMap.getFileExtensionFromUrl(path).toLowerCase(Locale.ROOT)
     var mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
-    if (StringUtils.isNullOrEmpty(mimeType)) {
+    if (mimeType.isNullOrEmpty()) {
       mimeType = MIME_TYPE_IMAGE_JPEG
     }
     return mimeType
   }
 
   @JvmStatic
-  fun getSize(path: String?): Long {
+  fun getSize(path: String): Long {
     val file = File(path)
     return file.length()
   }
 
   @JvmStatic
-  fun getSizeMB(path: String?): Long {
+  fun getSizeMB(path: String): Long {
     val file = File(path)
     return file.length() / 1024 / 1024
   }
