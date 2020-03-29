@@ -2,10 +2,7 @@ package com.returnnotfound.stain.base.utils
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
 import android.graphics.Matrix
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
 import com.returnnotfound.stain.App
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -15,16 +12,20 @@ import java.io.IOException
 object ImageUtils {
   private const val FILE_EXTENSION = ".JPG"
   private val CACHE_PATH: String = App.instance.cacheDir.absolutePath
+
+  @JvmStatic
   fun getBitmapFromLocal(path: String?): Bitmap {
     val options = BitmapFactory.Options()
     options.inJustDecodeBounds = false
     return BitmapFactory.decodeFile(path, options)
   }
 
+  @JvmStatic
   fun getBitmapFromLocal(path: String?, options: BitmapFactory.Options?): Bitmap {
     return BitmapFactory.decodeFile(path, options)
   }
 
+  @JvmStatic
   fun saveBitmap(data: Bitmap?): String {
     val imageName = "${System.currentTimeMillis()}$FILE_EXTENSION"
     val pathImage = CACHE_PATH.toString() + imageName
@@ -32,6 +33,7 @@ object ImageUtils {
     return pathImage
   }
 
+  @JvmStatic
   fun saveBitmap(bitmap: Bitmap?, file: String): Boolean {
     var bitmapResult = bitmap
     val bytes = ByteArrayOutputStream()
@@ -56,7 +58,8 @@ object ImageUtils {
     }
   }
 
-  private fun rotateImage(bitmap: Bitmap, rotate: Int): Bitmap {
+  @JvmStatic
+  fun rotateImage(bitmap: Bitmap, rotate: Int): Bitmap {
     val rotateBitmap: Bitmap
     rotateBitmap = if (rotate > 0) {
       val matrix = Matrix()
@@ -66,16 +69,5 @@ object ImageUtils {
       bitmap
     }
     return rotateBitmap
-  }
-
-  fun getDrawable(radius: Int, color: String?): Drawable {
-    val gradientDrawable = GradientDrawable()
-    gradientDrawable.cornerRadius = radius.toFloat()
-    try {
-      gradientDrawable.setColor(Color.parseColor(color))
-    } catch (e: Exception) {
-      gradientDrawable.setColor(Color.parseColor("#de4242"))
-    }
-    return gradientDrawable
   }
 }
