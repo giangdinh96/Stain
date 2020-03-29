@@ -16,6 +16,7 @@ import javax.inject.Singleton
     NetworkConfigModule::class,
     RealmConfigModule::class,
     ActivityBuilder::class,
+    FragmentBuilder::class,
     ViewModelModule::class,
     DataSourceModule::class,
     RepositoryModule::class
