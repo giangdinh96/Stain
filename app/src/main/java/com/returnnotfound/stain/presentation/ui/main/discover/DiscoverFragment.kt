@@ -1,7 +1,7 @@
 package com.returnnotfound.stain.presentation.ui.main.discover
 
 import androidx.lifecycle.ViewModelProvider
-import com.returnnotfound.stain.AppViewModelFactory
+import com.returnnotfound.stain.presentation.AppViewModelFactory
 import com.returnnotfound.stain.R
 import com.returnnotfound.stain.base.fragment.BaseFragment
 import javax.inject.Inject
