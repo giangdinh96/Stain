@@ -2,22 +2,23 @@ package com.returnnotfound.stain.base.extension
 
 import android.app.Activity
 import android.content.Context
-import android.widget.EditText
+import android.view.View
 import androidx.fragment.app.FragmentManager
+import com.returnnotfound.stain.R
 import com.returnnotfound.stain.base.activity.BaseActivity
 import com.returnnotfound.stain.base.fragment.BaseFragment
-import com.returnnotfound.stain.base.utils.ViewUtils
 
 fun Activity.getContext(): Context = this
 
-fun Activity.getBaseActivity(): BaseActivity? = this as BaseActivity?
+fun Activity.getBaseActivity(): BaseActivity = this as BaseActivity
 
-fun Activity.showKeyboard(editText: EditText?) {
-  editText?.let { ViewUtils.showKeyboard(it) }
+fun Activity.showKeyboard(view: View?) {
+  view?.showKeyboard()
 }
 
 fun Activity.hideKeyboard() {
-  ViewUtils.hideKeyboard(this)
+  val view = currentFocus ?: findViewById(R.id.content)
+  view?.hideKeyboard()
 }
 
 fun BaseActivity.showToast(resId: Int) {
@@ -27,10 +28,22 @@ fun BaseActivity.showToast(resId: Int) {
 fun BaseActivity.addRootFragment(fragment: BaseFragment) {
   supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
   supportFragmentManager.addFragment(
-    fragment = getRootFragment(),
+    fragment = fragment,
     containerId = getContainerId(),
     isAddToBackStack = false,
     isReplace = true,
     isWithAnim = false
+  )
+}
+
+fun BaseActivity.addFragment(fragment: BaseFragment) {
+  supportFragmentManager.addFragment(
+    fragment = fragment, containerId = getContainerId()
+  )
+}
+
+fun BaseActivity.replaceFragment(fragment: BaseFragment) {
+  supportFragmentManager.addFragment(
+    fragment = fragment, containerId = getContainerId(), isReplace = true
   )
 }

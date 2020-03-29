@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import butterknife.ButterKnife
 import butterknife.Unbinder
 import com.returnnotfound.stain.base.extension.getBaseActivity
-import com.returnnotfound.stain.base.utils.ViewUtils
+import com.returnnotfound.stain.base.extension.setOnTouchHideKeyboard
 
 abstract class BaseFragment : BaseLogFragment(), BaseFragmentView {
   private var mIsFirstResume = true
@@ -55,7 +55,7 @@ abstract class BaseFragment : BaseLogFragment(), BaseFragmentView {
     mUnBinder = ButterKnife.bind(this, view)
     view.isClickable = true
     if (isTouchHideKeyboard()) {
-      ViewUtils.setupUI(view, activity, getExcludeViewsTouchHideKeyboard())
+      view.setOnTouchHideKeyboard(getExcludeViewsTouchHideKeyboard())
     }
 
     mIsFirstResume = savedInstanceState == null
