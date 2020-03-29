@@ -6,7 +6,7 @@ import butterknife.ButterKnife
 import butterknife.Unbinder
 import com.returnnotfound.stain.base.FRAGMENT_CONTAINER_ID
 import com.returnnotfound.stain.base.ROOT_LAYOUT_ID
-import com.returnnotfound.stain.base.addRootFragment
+import com.returnnotfound.stain.base.extension.addRootFragment
 import com.returnnotfound.stain.base.extension.getTopFragment
 import com.returnnotfound.stain.base.fragment.BaseFragment
 import io.github.inflationx.viewpump.ViewPumpContextWrapper

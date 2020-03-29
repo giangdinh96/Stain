@@ -1,13 +1,11 @@
-package com.returnnotfound.stain.base
+package com.returnnotfound.stain.base.extension
 
 import android.app.Activity
 import android.content.Context
 import android.widget.EditText
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.returnnotfound.stain.base.activity.BaseActivity
 import com.returnnotfound.stain.base.fragment.BaseFragment
-import com.returnnotfound.stain.base.extension.addFragment
 import com.returnnotfound.stain.base.utils.ViewUtils
 
 fun Activity.getContext(): Context = this
@@ -35,23 +33,4 @@ fun BaseActivity.addRootFragment(fragment: BaseFragment) {
     isReplace = true,
     isWithAnim = false
   )
-}
-
-
-//----------------------------------//
-
-fun Fragment.getBaseActivity(): BaseActivity? = activity?.getBaseActivity()
-
-fun Fragment.getBaseFragment(): BaseFragment? = this as BaseFragment
-
-fun Fragment.showKeyboard(editText: EditText?) {
-  editText?.let { ViewUtils.showKeyboard(it) }
-}
-
-fun Fragment.hideKeyboard() {
-  activity?.let { ViewUtils.hideKeyboard(it) }
-}
-
-fun BaseFragment.showToast(resId: Int) {
-  showToast(getString(resId))
 }

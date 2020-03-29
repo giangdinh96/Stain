@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import butterknife.ButterKnife
 import butterknife.Unbinder
-import com.returnnotfound.stain.base.getBaseActivity
+import com.returnnotfound.stain.base.extension.getBaseActivity
 import com.returnnotfound.stain.base.utils.ViewUtils
 
 abstract class BaseFragment : BaseLogFragment(), BaseFragmentView {
