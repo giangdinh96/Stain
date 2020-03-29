@@ -32,7 +32,8 @@ class App : DaggerApplication() {
   }
 
   companion object {
-    var instance: App? = null
+    @JvmStatic
+    lateinit var instance: App
       private set
   }
 }

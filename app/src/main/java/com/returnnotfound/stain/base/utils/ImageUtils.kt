@@ -14,7 +14,7 @@ import java.io.IOException
 
 object ImageUtils {
   private const val FILE_EXTENSION = ".JPG"
-  private val CACHE_PATH: String = App.instance!!.cacheDir.absolutePath
+  private val CACHE_PATH: String = App.instance.cacheDir.absolutePath
   fun getBitmapFromLocal(path: String?): Bitmap {
     val options = BitmapFactory.Options()
     options.inJustDecodeBounds = false
