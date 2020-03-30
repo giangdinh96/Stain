@@ -1,4 +1,4 @@
-package com.returnnotfound.stain.base.extension
+package com.returnnotfound.stain.base.binding
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
