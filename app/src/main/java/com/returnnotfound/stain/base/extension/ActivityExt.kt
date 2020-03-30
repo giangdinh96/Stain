@@ -3,8 +3,10 @@ package com.returnnotfound.stain.base.extension
 import android.app.Activity
 import android.content.Context
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.returnnotfound.stain.R
+import com.returnnotfound.stain.base.*
 import com.returnnotfound.stain.base.activity.BaseActivity
 import com.returnnotfound.stain.base.fragment.BaseFragment
 
@@ -25,9 +27,37 @@ fun BaseActivity.showToast(resId: Int) {
   showToast(getString(resId))
 }
 
+fun BaseActivity.addFragment(
+  fragment: Fragment,
+  containerId: Int = FRAGMENT_CONTAINER_ID,
+  tag: String = fragment::class.java.name,
+  isAddToBackStack: Boolean = true,
+  isWithAnim: Boolean = true,
+  isReplace: Boolean = false,
+  isLoadExisted: Boolean = false,
+  enterAnim: Int = ANIM_ENTER_RIGHT_TO_LEFT,
+  exitAnim: Int = ANIM_EXIT_RIGHT_TO_LEFT,
+  popEnterAnim: Int = ANIM_ENTER_LEFT_TO_RIGHT,
+  popExitAnim: Int = ANIM_EXIT_LEFT_TO_RIGHT
+) {
+  supportFragmentManager.addFragment(
+    fragment,
+    containerId,
+    tag,
+    isAddToBackStack,
+    isWithAnim,
+    isReplace,
+    isLoadExisted,
+    enterAnim,
+    exitAnim,
+    popEnterAnim,
+    popExitAnim
+  )
+}
+
 fun BaseActivity.addRootFragment(fragment: BaseFragment) {
   supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-  supportFragmentManager.addFragment(
+  addFragment(
     fragment = fragment,
     containerId = getContainerId(),
     isAddToBackStack = false,
@@ -37,13 +67,9 @@ fun BaseActivity.addRootFragment(fragment: BaseFragment) {
 }
 
 fun BaseActivity.addFragment(fragment: BaseFragment) {
-  supportFragmentManager.addFragment(
-    fragment = fragment, containerId = getContainerId()
-  )
+  addFragment(fragment = fragment, containerId = getContainerId())
 }
 
 fun BaseActivity.replaceFragment(fragment: BaseFragment) {
-  supportFragmentManager.addFragment(
-    fragment = fragment, containerId = getContainerId(), isReplace = true
-  )
+  addFragment(fragment = fragment, containerId = getContainerId(), isReplace = true)
 }
