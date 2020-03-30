@@ -3,6 +3,7 @@
     android:fromDegrees="0"
     android:toDegrees="360">
     <shape
+        android:thickness="1dp"
         android:shape="ring"
         android:useLevel="false">
         <gradient
