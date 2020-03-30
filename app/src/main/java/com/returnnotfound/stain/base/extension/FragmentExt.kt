@@ -31,13 +31,9 @@ fun BaseFragment.replaceFragment(fragment: BaseFragment) {
 }
 
 fun BaseFragment.addChildFragment(fragment: BaseFragment, containerId: Int) {
-  childFragmentManager.addFragment(
-    fragment = fragment, containerId = containerId
-  )
+  childFragmentManager.addFragment(fragment = fragment, containerId = containerId)
 }
 
 fun BaseFragment.replaceFragment(fragment: BaseFragment, containerId: Int) {
-  childFragmentManager.addFragment(
-    fragment = fragment, containerId = containerId, isReplace = true
-  )
+  childFragmentManager.addFragment(fragment = fragment, containerId = containerId, isReplace = true)
 }
