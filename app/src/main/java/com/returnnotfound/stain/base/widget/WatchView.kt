@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import com.returnnotfound.stain.base.utils.FontUtils
 import java.util.*
 import kotlin.math.cos
@@ -80,12 +81,14 @@ class WatchView : View {
     paintHandSecond = Paint(Paint.ANTI_ALIAS_FLAG)
     paintHandSecond.color = Color.BLACK
     paintHandSecond.strokeWidth = 2f
-  }
 
-  override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-    super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-    centerX = width / 2.toFloat()
-    centerY = height / 2.toFloat()
+    viewTreeObserver.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
+      override fun onGlobalLayout() {
+        viewTreeObserver.removeOnGlobalLayoutListener(this)
+        centerX = width / 2.toFloat()
+        centerY = height / 2.toFloat()
+      }
+    })
   }
 
   override fun onDraw(canvas: Canvas) {
