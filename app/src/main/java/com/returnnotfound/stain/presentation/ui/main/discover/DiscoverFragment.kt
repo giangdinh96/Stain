@@ -1,9 +1,9 @@
 package com.returnnotfound.stain.presentation.ui.main.discover
 
 import androidx.lifecycle.ViewModelProvider
-import com.returnnotfound.stain.presentation.AppViewModelFactory
 import com.returnnotfound.stain.R
 import com.returnnotfound.stain.base.fragment.BaseFragment
+import com.returnnotfound.stain.presentation.AppViewModelFactory
 import javax.inject.Inject
 
 class DiscoverFragment : BaseFragment(), DiscoverView {
