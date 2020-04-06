@@ -13,4 +13,9 @@
         android:indeterminateDrawable="@drawable/ic_progress"
         android:indeterminateDuration="350" />
 
+    <com.returnnotfound.stain.base.widget.WatchView
+        android:id="@+id/watchView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
