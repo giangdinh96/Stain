@@ -90,7 +90,7 @@ dependencies {
     // Android KTX
     implementation 'androidx.core:core-ktx:1.2.0'
 //    implementation "androidx.collection:collection-ktx:1.1.0"
-    implementation "androidx.fragment:fragment-ktx:1.2.3"
+    implementation "androidx.fragment:fragment-ktx:1.2.4"
 //    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 //    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
@@ -141,8 +141,8 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     // Firebase
-    implementation 'com.google.firebase:firebase-analytics:17.2.3'
-    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta02'
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta03'
 
     // Dagger
     implementation "com.google.dagger:dagger:2.27"
@@ -150,6 +150,9 @@ dependencies {
     implementation "com.google.dagger:dagger-android:2.27"
     implementation "com.google.dagger:dagger-android-support:2.27"
     kapt "com.google.dagger:dagger-android-processor:2.27"
+
+    // ViewPager Indicator
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
 
     // Leak memory
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
