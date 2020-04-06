@@ -19,17 +19,20 @@ class AutoViewPager : OnPageChangeCallback(), OnPageChangeListener {
     positionOffsetPixels: Int
   ) {
     super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-    stopAuto()
   }
 
   override fun onPageSelected(position: Int) {
     super.onPageSelected(position)
-    stopAuto()
-    startAuto()
   }
 
   override fun onPageScrollStateChanged(state: Int) {
     super.onPageScrollStateChanged(state)
+    if (state == ViewPager2.SCROLL_STATE_IDLE) {
+      stopAuto()
+      startAuto()
+    } else if (state == ViewPager2.SCROLL_STATE_DRAGGING) {
+      stopAuto()
+    }
   }
 
   private fun nextPage() {
@@ -40,8 +43,9 @@ class AutoViewPager : OnPageChangeCallback(), OnPageChangeListener {
       setCurrentItem(nextPosition, true)
     }
     viewPager2?.apply {
-      if (childCount == 0) return
-      val lastPosition = childCount - 1
+      val itemCount = adapter?.itemCount ?: 0
+      if (itemCount == 0) return
+      val lastPosition = itemCount - 1
       val nextPosition = if (currentItem < lastPosition) currentItem + 1 else 0
       setCurrentItem(nextPosition, true)
     }
