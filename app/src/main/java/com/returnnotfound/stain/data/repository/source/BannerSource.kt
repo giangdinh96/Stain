@@ -1,11 +1,11 @@
 package com.returnnotfound.stain.data.repository.source
 
 import com.returnnotfound.stain.domain.model.Banner
+import io.reactivex.Single
 
 interface BannerLocalSource {
-  suspend fun getBannerList(): List<Banner>
+  fun getBannerList(): Single<List<Banner>>
 }
 
 interface BannerRemoteSource {
-  suspend fun getBannerList(): List<Banner>
 }
