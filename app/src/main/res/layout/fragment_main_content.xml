@@ -4,7 +4,6 @@
     android:id="@+id/drawer_content_tb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/motion"
     app:tbl_header_action_left_style="image"
     app:tbl_header_action_right_style="image"
     app:tbl_header_content_container_drawable="@android:color/transparent"
@@ -43,7 +42,7 @@
     <View
         android:id="@+id/top_divider_v"
         android:layout_width="0dp"
-        android:layout_height="4dp"
+        android:layout_height="1dp"
         android:background="@drawable/bg_shadow_bottom"
         app:layout_constraintLeft_toLeftOf="@+id/toolbar_body_v"
         app:layout_constraintRight_toRightOf="@+id/toolbar_body_v"
@@ -57,23 +56,4 @@
         app:layout_constraintBottom_toTopOf="@id/main_bottom_menu_bnv"
         app:layout_constraintLeft_toLeftOf="@+id/toolbar_body_v"
         app:layout_constraintRight_toRightOf="@+id/toolbar_body_v" />
-
-    <ImageView
-        android:id="@+id/video_iv"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/common_height"
-        android:background="#f00"
-        app:layout_constraintBottom_toTopOf="@id/main_bottom_menu_bnv"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <ImageView
-        android:id="@+id/video_content_iv"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#0f0"
-        app:layout_constraintBottom_toBottomOf="@id/video_iv"
-        app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintLeft_toLeftOf="@id/video_iv"
-        app:layout_constraintTop_toTopOf="@id/video_iv" />
 </com.returnnotfound.stain.base.widget.Toolbar>
