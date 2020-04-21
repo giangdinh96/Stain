@@ -11,14 +11,6 @@ public class JavaMVP {
 //    P getPresenter();
 //  }
 //
-//  interface IMainPresenter extends IPresenter<IMainView> {
-//
-//  }
-//
-//  interface IMainView extends IView<IMainPresenter> {
-//
-//  }
-//
 //  abstract class BasePresenter<V extends IView> implements IPresenter<V> {
 //    private V view;
 //
@@ -42,6 +34,13 @@ public class JavaMVP {
 //    }
 //  }
 //
+//  interface IMainPresenter extends IPresenter<IMainView> {
+//
+//  }
+//
+//  interface IMainView extends IView<IMainPresenter> {
+//
+//  }
 //  class MainPresenter extends BasePresenter<IMainView> implements IMainPresenter {
 //
 //  }
